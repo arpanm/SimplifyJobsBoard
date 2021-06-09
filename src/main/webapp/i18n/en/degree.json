@@ -1,0 +1,12 @@
+{
+  "simplifyJobsBoardApp": {
+    "Degree": {
+      "null": "",
+      "None": "None",
+      "SchoolFinal": "SchoolFinal",
+      "Bachelors": "Bachelors",
+      "Masters": "Masters",
+      "PG": "PG"
+    }
+  }
+}

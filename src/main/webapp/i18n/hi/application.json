@@ -1,0 +1,29 @@
+{
+  "simplifyJobsBoardApp": {
+    "application": {
+      "home": {
+        "title": "Applications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Application बनाएँ",
+        "createOrEditLabel": "Application बनाएँ या संपादित करें",
+        "search": "Application खोजें",
+        "notFound": "No Applications found"
+      },
+      "created": "एक नया Application [identifier: {{ param }}] तैयार है",
+      "updated": "एक Application [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Application [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Application [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Application"
+      },
+      "id": "ID",
+      "applicationTime": "Application Time",
+      "desiredSalary": "Desired Salary",
+      "yearsOfExpericeOnThisRole": "Years Of Experice On This Role",
+      "job": "Job",
+      "candidate": "Candidate"
+    }
+  }
+}

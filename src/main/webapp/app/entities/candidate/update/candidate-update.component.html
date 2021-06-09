@@ -1,0 +1,112 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-candidate-heading"
+        data-cy="CandidateCreateUpdateHeading"
+        jhiTranslate="simplifyJobsBoardApp.candidate.home.createOrEditLabel"
+      >
+        Create or edit a Candidate
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+          <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.mobile" for="field_mobile">Mobile</label>
+          <input type="text" class="form-control" name="mobile" id="field_mobile" data-cy="mobile" formControlName="mobile" />
+          <div *ngIf="editForm.get('mobile')!.invalid && (editForm.get('mobile')!.dirty || editForm.get('mobile')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('mobile')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.degree" for="field_degree">Degree</label>
+          <select class="form-control" name="degree" formControlName="degree" id="field_degree" data-cy="degree">
+            <option [ngValue]="null">{{ 'simplifyJobsBoardApp.Degree.null' | translate }}</option>
+            <option value="None">{{ 'simplifyJobsBoardApp.Degree.None' | translate }}</option>
+            <option value="SchoolFinal">{{ 'simplifyJobsBoardApp.Degree.SchoolFinal' | translate }}</option>
+            <option value="Bachelors">{{ 'simplifyJobsBoardApp.Degree.Bachelors' | translate }}</option>
+            <option value="Masters">{{ 'simplifyJobsBoardApp.Degree.Masters' | translate }}</option>
+            <option value="PG">{{ 'simplifyJobsBoardApp.Degree.PG' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.description" for="field_description"
+            >Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.city" for="field_city">City</label>
+          <select class="form-control" name="city" formControlName="city" id="field_city" data-cy="city">
+            <option [ngValue]="null">{{ 'simplifyJobsBoardApp.City.null' | translate }}</option>
+            <option value="Delhi">{{ 'simplifyJobsBoardApp.City.Delhi' | translate }}</option>
+            <option value="Mumbai">{{ 'simplifyJobsBoardApp.City.Mumbai' | translate }}</option>
+            <option value="Chennai">{{ 'simplifyJobsBoardApp.City.Chennai' | translate }}</option>
+            <option value="Kolkaka">{{ 'simplifyJobsBoardApp.City.Kolkaka' | translate }}</option>
+            <option value="Hyderabad">{{ 'simplifyJobsBoardApp.City.Hyderabad' | translate }}</option>
+            <option value="Bangalore">{{ 'simplifyJobsBoardApp.City.Bangalore' | translate }}</option>
+            <option value="Pune">{{ 'simplifyJobsBoardApp.City.Pune' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.candidate.currentSalary" for="field_currentSalary"
+            >Current Salary</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="currentSalary"
+            id="field_currentSalary"
+            data-cy="currentSalary"
+            formControlName="currentSalary"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+{
+  "name": "Job",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "yearsOfExperience",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minSalary",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxSalary",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "degree",
+      "fieldType": "Degree",
+      "fieldValues": "None,SchoolFinal,Bachelors,Masters,PG"
+    },
+    {
+      "fieldName": "locationType",
+      "fieldType": "LocationType",
+      "fieldValues": "WorkFromHome,Onsite"
+    },
+    {
+      "fieldName": "jobType",
+      "fieldType": "JobType",
+      "fieldValues": "FullTime,PartTime"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "City",
+      "fieldValues": "Delhi,Mumbai,Chennai,Kolkaka,Hyderabad,Bangalore,Pune"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creatorEmail",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "creatorMobile",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "application",
+      "otherEntityRelationshipName": "job",
+      "relationshipName": "application"
+    }
+  ],
+  "entityTableName": "job",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210609140938"
+}

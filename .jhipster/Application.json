@@ -1,0 +1,41 @@
+{
+  "name": "Application",
+  "fields": [
+    {
+      "fieldName": "applicationTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "desiredSalary",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "yearsOfExpericeOnThisRole",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "job",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "job"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "candidate",
+      "otherEntityRelationshipName": "application",
+      "relationshipName": "candidate"
+    }
+  ],
+  "entityTableName": "application",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210609140940"
+}
