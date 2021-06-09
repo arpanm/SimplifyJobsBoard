@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="job">
+      <h2 data-cy="jobDetailsHeading"><span jhiTranslate="simplifyJobsBoardApp.job.detail.title">Job</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ job.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.title">Title</span></dt>
+        <dd>
+          <span>{{ job.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.role">Role</span></dt>
+        <dd>
+          <span>{{ job.role }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.yearsOfExperience">Years Of Experience</span></dt>
+        <dd>
+          <span>{{ job.yearsOfExperience }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.minSalary">Min Salary</span></dt>
+        <dd>
+          <span>{{ job.minSalary }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.maxSalary">Max Salary</span></dt>
+        <dd>
+          <span>{{ job.maxSalary }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.degree">Degree</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'simplifyJobsBoardApp.Degree.' + job.degree }}">{{ job.degree }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.locationType">Location Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'simplifyJobsBoardApp.LocationType.' + job.locationType }}">{{ job.locationType }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.jobType">Job Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'simplifyJobsBoardApp.JobType.' + job.jobType }}">{{ job.jobType }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.city">City</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'simplifyJobsBoardApp.City.' + job.city }}">{{ job.city }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.description">Description</span></dt>
+        <dd>
+          <span>{{ job.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.creatorEmail">Creator Email</span></dt>
+        <dd>
+          <span>{{ job.creatorEmail }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.creatorMobile">Creator Mobile</span></dt>
+        <dd>
+          <span>{{ job.creatorMobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.job.createdTime">Created Time</span></dt>
+        <dd>
+          <span>{{ job.createdTime | formatMediumDate }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/job', job.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

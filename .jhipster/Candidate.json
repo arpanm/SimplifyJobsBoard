@@ -1,0 +1,51 @@
+{
+  "name": "Candidate",
+  "fields": [
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "degree",
+      "fieldType": "Degree",
+      "fieldValues": "None,SchoolFinal,Bachelors,Masters,PG"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "City",
+      "fieldValues": "Delhi,Mumbai,Chennai,Kolkaka,Hyderabad,Bangalore,Pune"
+    },
+    {
+      "fieldName": "currentSalary",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "application",
+      "otherEntityRelationshipName": "candidate",
+      "relationshipName": "application"
+    }
+  ],
+  "entityTableName": "candidate",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210609140939"
+}

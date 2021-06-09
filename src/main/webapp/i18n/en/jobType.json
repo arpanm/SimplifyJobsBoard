@@ -1,0 +1,9 @@
+{
+  "simplifyJobsBoardApp": {
+    "JobType": {
+      "null": "",
+      "FullTime": "FullTime",
+      "PartTime": "PartTime"
+    }
+  }
+}

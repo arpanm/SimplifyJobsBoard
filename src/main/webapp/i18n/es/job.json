@@ -1,0 +1,38 @@
+{
+  "simplifyJobsBoardApp": {
+    "job": {
+      "home": {
+        "title": "Jobs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Job",
+        "createOrEditLabel": "Crear o editar Job",
+        "search": "Buscar Job",
+        "notFound": "Ningún Jobs encontrado"
+      },
+      "created": "Un nuevo Job ha sido creado con el identificador {{ param }}",
+      "updated": "Un Job ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Job ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Job {{ id }}?"
+      },
+      "detail": {
+        "title": "Job"
+      },
+      "id": "ID",
+      "title": "Title",
+      "role": "Role",
+      "yearsOfExperience": "Years Of Experience",
+      "minSalary": "Min Salary",
+      "maxSalary": "Max Salary",
+      "degree": "Degree",
+      "locationType": "Location Type",
+      "jobType": "Job Type",
+      "city": "City",
+      "description": "Description",
+      "creatorEmail": "Creator Email",
+      "creatorMobile": "Creator Mobile",
+      "createdTime": "Created Time",
+      "application": "Application"
+    }
+  }
+}

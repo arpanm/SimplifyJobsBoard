@@ -42,7 +42,9 @@
     "jwtSecretKey": "ZjFlNjI5YzNmZjQ0OGQ0ODg1NjYwZDNjM2U2ZTQxMjYyNDJhYjZhNjZjMDk1NDRiNzU0MDg4NzE0ZTE3NThjNjQyODNlZWJiNWQyMDBlYzY1NzY3ZWZiNTgzZjMwNTcyMWQ0YWFiNjM1YTg5NWJlYmQyNWU0Y2Y4MzdjNDMzYTM=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Job", "Candidate", "Application"],
+    "lastLiquibaseTimestamp": 1623247780000
   },
   "git-provider": "GitHub",
   "git-company": "arpanm",

@@ -1,0 +1,82 @@
+
+entity Job {
+	title String required,
+    role String,
+    yearsOfExperience Integer,
+    minSalary Integer,
+    maxSalary Integer,
+    degree Degree,
+    locationType LocationType,
+    jobType JobType,
+    city City,
+    description String,
+    creatorEmail String required,
+    creatorMobile String required,
+    createdTime LocalDate
+}
+
+entity Candidate {
+	email String required,
+    mobile String required,
+    degree Degree,
+    description String,
+    city City,
+    currentSalary Integer
+}
+
+entity Application {
+	applicationTime LocalDate,
+    desiredSalary Integer,
+    yearsOfExpericeOnThisRole Integer 
+}
+
+
+enum Degree {
+	None,
+    SchoolFinal,
+	Bachelors,
+    Masters,
+    PG
+}
+
+enum LocationType {
+	WorkFromHome,
+    Onsite
+}
+
+enum JobType {
+	FullTime,
+    PartTime
+}
+
+enum City {
+	Delhi,
+    Mumbai,
+    Chennai,
+    Kolkaka,
+    Hyderabad,
+    Bangalore,
+    Pune
+}
+
+relationship OneToMany {
+	Job to Application{job}
+}
+
+relationship OneToMany {
+	Candidate to Application{candidate}
+}
+
+
+// Set pagination options
+paginate Job with infinite-scroll
+paginate Candidate, Application with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="application">
+      <h2 data-cy="applicationDetailsHeading"><span jhiTranslate="simplifyJobsBoardApp.application.detail.title">Application</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ application.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.application.applicationTime">Application Time</span></dt>
+        <dd>
+          <span>{{ application.applicationTime | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.application.desiredSalary">Desired Salary</span></dt>
+        <dd>
+          <span>{{ application.desiredSalary }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.application.yearsOfExpericeOnThisRole">Years Of Experice On This Role</span></dt>
+        <dd>
+          <span>{{ application.yearsOfExpericeOnThisRole }}</span>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.application.job">Job</span></dt>
+        <dd>
+          <div *ngIf="application.job">
+            <a [routerLink]="['/job', application.job?.id, 'view']">{{ application.job?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="simplifyJobsBoardApp.application.candidate">Candidate</span></dt>
+        <dd>
+          <div *ngIf="application.candidate">
+            <a [routerLink]="['/candidate', application.candidate?.id, 'view']">{{ application.candidate?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/application', application.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "simplifyJobsBoardApp": {
+    "job": {
+      "home": {
+        "title": "Jobs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Job बनाएँ",
+        "createOrEditLabel": "Job बनाएँ या संपादित करें",
+        "search": "Job खोजें",
+        "notFound": "No Jobs found"
+      },
+      "created": "एक नया Job [identifier: {{ param }}] तैयार है",
+      "updated": "एक Job [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Job [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Job [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Job"
+      },
+      "id": "ID",
+      "title": "Title",
+      "role": "Role",
+      "yearsOfExperience": "Years Of Experience",
+      "minSalary": "Min Salary",
+      "maxSalary": "Max Salary",
+      "degree": "Degree",
+      "locationType": "Location Type",
+      "jobType": "Job Type",
+      "city": "City",
+      "description": "Description",
+      "creatorEmail": "Creator Email",
+      "creatorMobile": "Creator Mobile",
+      "createdTime": "Created Time",
+      "application": "Application"
+    }
+  }
+}

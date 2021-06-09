@@ -1,0 +1,9 @@
+{
+  "simplifyJobsBoardApp": {
+    "LocationType": {
+      "null": "",
+      "WorkFromHome": "WorkFromHome",
+      "Onsite": "Onsite"
+    }
+  }
+}

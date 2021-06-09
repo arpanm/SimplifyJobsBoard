@@ -1,0 +1,31 @@
+{
+  "simplifyJobsBoardApp": {
+    "candidate": {
+      "home": {
+        "title": "Candidates",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Candidate",
+        "createOrEditLabel": "Crear o editar Candidate",
+        "search": "Buscar Candidate",
+        "notFound": "Ningún Candidates encontrado"
+      },
+      "created": "Un nuevo Candidate ha sido creado con el identificador {{ param }}",
+      "updated": "Un Candidate ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Candidate ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Candidate {{ id }}?"
+      },
+      "detail": {
+        "title": "Candidate"
+      },
+      "id": "ID",
+      "email": "Email",
+      "mobile": "Mobile",
+      "degree": "Degree",
+      "description": "Description",
+      "city": "City",
+      "currentSalary": "Current Salary",
+      "application": "Application"
+    }
+  }
+}

@@ -48,6 +48,11 @@ public class CacheConfiguration {
             createCache(cm, com.simplify.jobsboard.domain.User.class.getName());
             createCache(cm, com.simplify.jobsboard.domain.Authority.class.getName());
             createCache(cm, com.simplify.jobsboard.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.simplify.jobsboard.domain.Job.class.getName());
+            createCache(cm, com.simplify.jobsboard.domain.Job.class.getName() + ".applications");
+            createCache(cm, com.simplify.jobsboard.domain.Candidate.class.getName());
+            createCache(cm, com.simplify.jobsboard.domain.Candidate.class.getName() + ".applications");
+            createCache(cm, com.simplify.jobsboard.domain.Application.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

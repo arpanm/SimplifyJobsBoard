@@ -1,0 +1,31 @@
+{
+  "simplifyJobsBoardApp": {
+    "candidate": {
+      "home": {
+        "title": "Candidates",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Candidate बनाएँ",
+        "createOrEditLabel": "Candidate बनाएँ या संपादित करें",
+        "search": "Candidate खोजें",
+        "notFound": "No Candidates found"
+      },
+      "created": "एक नया Candidate [identifier: {{ param }}] तैयार है",
+      "updated": "एक Candidate [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Candidate [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Candidate [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Candidate"
+      },
+      "id": "ID",
+      "email": "Email",
+      "mobile": "Mobile",
+      "degree": "Degree",
+      "description": "Description",
+      "city": "City",
+      "currentSalary": "Current Salary",
+      "application": "Application"
+    }
+  }
+}

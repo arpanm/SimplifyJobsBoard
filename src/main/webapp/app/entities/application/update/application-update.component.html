@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-application-heading"
+        data-cy="ApplicationCreateUpdateHeading"
+        jhiTranslate="simplifyJobsBoardApp.application.home.createOrEditLabel"
+      >
+        Create or edit a Application
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.application.applicationTime" for="field_applicationTime"
+            >Application Time</label
+          >
+          <div class="input-group">
+            <input
+              id="field_applicationTime"
+              data-cy="applicationTime"
+              type="text"
+              class="form-control"
+              name="applicationTime"
+              ngbDatepicker
+              #applicationTimeDp="ngbDatepicker"
+              formControlName="applicationTime"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="applicationTimeDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.application.desiredSalary" for="field_desiredSalary"
+            >Desired Salary</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="desiredSalary"
+            id="field_desiredSalary"
+            data-cy="desiredSalary"
+            formControlName="desiredSalary"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="simplifyJobsBoardApp.application.yearsOfExpericeOnThisRole"
+            for="field_yearsOfExpericeOnThisRole"
+            >Years Of Experice On This Role</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="yearsOfExpericeOnThisRole"
+            id="field_yearsOfExpericeOnThisRole"
+            data-cy="yearsOfExpericeOnThisRole"
+            formControlName="yearsOfExpericeOnThisRole"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.application.job" for="field_job">Job</label>
+          <select class="form-control" id="field_job" data-cy="job" name="job" formControlName="job">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="jobOption.id === editForm.get('job')!.value?.id ? editForm.get('job')!.value : jobOption"
+              *ngFor="let jobOption of jobsSharedCollection; trackBy: trackJobById"
+            >
+              {{ jobOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="simplifyJobsBoardApp.application.candidate" for="field_candidate"
+            >Candidate</label
+          >
+          <select class="form-control" id="field_candidate" data-cy="candidate" name="candidate" formControlName="candidate">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="candidateOption.id === editForm.get('candidate')!.value?.id ? editForm.get('candidate')!.value : candidateOption"
+              *ngFor="let candidateOption of candidatesSharedCollection; trackBy: trackCandidateById"
+            >
+              {{ candidateOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
